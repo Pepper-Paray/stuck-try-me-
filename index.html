@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Try Me</title>
+</head>
+
+<body>
+    <header>
+        <h1>Welcome to Try Me!</h1>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="feature-section">
+            <h2>Random Answer Generator</h2>
+            <button onclick="getRandomAnswer()">Get Answer</button>
+            <p id="result"></p>
+        </section>
+        <section class="feature-section">
+            <h2>Magic 8-Ball</h2>
+            <div class="ball" onclick="shakeBall()">Click Me</div>
+            <p id="answer"></p>
+        </section>
+        <section id="home">
+            <h2>Home</h2>
+            <p>Welcome to the home section! Here you can find the latest updates.<br>
+                <a href="#about">Learn more about us</a> | <a href="#contact">Get in touch</a><br>
+                Please feel free to explore the site and discover more about our services. Have a great day!
+            </p>
+        </section>
+        <section id="about">
+            <h2>About</h2>
+            <p>This section contains information about the website and its purpose. We aim to provide a platform for users to explore various topics and engage with content that interests them. Our goal is to create a community where everyone can share ideas and learn from each other. If you have any questions or suggestions, please feel free to reach out to us.</p>
+        </section>
+        <section id="contact">
+            <h2>Contact</h2>
+            <p>Here you can find contact information. Feel free to reach out to us!<br>
+                Email: <a href="mailto:info@tryme.com">info@tryme.com</a><br>
+                Follow us: <a href="https://twitter.com/tryme" target="_blank">Twitter</a> | <a href="https://facebook.com/tryme" target="_blank">Facebook</a><br>
+                We value your feedback and are always looking for ways to improve our services. Thank you for visiting our site!
+            </p>
+        </section>
+        <section class="info-section">
+            <h2>About Try Me</h2>
+            <p><strong>Try Me</strong> is a fun and interactive web app designed to inspire, motivate, and entertain! Whether you need a random answer, a creative idea, or just want to play with the Magic 8-Ball, this site has you covered.</p>
+            <ul style="max-width: 600px; margin: 2rem auto; text-align: left;">
+                <li><strong>Random Answer Generator:</strong> Get quick yes/no/maybe responses for your questions.</li>
+                <li><strong>Magic 8-Ball:</strong> Ask anything and see what the 8-Ball predicts!</li>
+                <li><strong>Random Phrase Generator:</strong> Discover new ideas and challenges to try every day.</li>
+            </ul>
+            <p>Created for anyone who loves a little surprise and motivation. Explore, have fun, and share your favorite results with friends!</p>
+        </section>
+    </main>
+    <footer>
+        <h2>Random Phrase Generator</h2>
+        <div class="quiz-container">
+            <button onclick="displayRandomPhrase()">Get Random Idea</button>
+            <p id="phrase"></p>
+        </div>
+        <div class="eight-ball-section">
+            <h2>Ask the Magic 8-Ball</h2>
+            <div class="ball" onclick="shakeBall()">Click Me</div>
+            <p id="eight-ball-answer"></p>
+        </div>
+        <p>&copy; 2023 Try Me. All rights reserved.</p>
+    </footer>
+    <script>
+        const answers = [
+            "Yes!", "No!", "Maybe!", "Try again later!", "Absolutely!", "Not a chance!", "Definitely!", "Very doubtful!"
+        ];
+        function getRandomAnswer() {
+            const randomIndex = Math.floor(Math.random() * answers.length);
+            document.getElementById("result").textContent = answers[randomIndex];
+        }
+        function shakeBall() {
+            const responses = [
+                "Yes", "No", "Maybe", "Ask again later",
+                "Definitely", "Unlikely", "It is certain", "Very doubtful"
+            ];
+            const randomIndex = Math.floor(Math.random() * responses.length);
+            document.getElementById("eight-ball-answer").textContent = responses[randomIndex];
+        }
+        const phrases = [
+            "Build a rocketship!",
+            "Take a break!",
+            "Make something meaningful!",
+            "Coding something challenging!",
+            "Create a new website!",
+            "Run a marathon!",
+            "Try something out of your comfort zone!",
+            "Learn a new skill!",
+            "Explore the world!",
+            "Write a book!",
+            "Cook a new recipe!",
+            "Paint a masterpiece!",
+            "Start a new hobby!",
+            "Volunteer for a cause!",
+            "Travel to a new place!",
+            "Start a garden!",
+            "Learn a new language!",
+            "Join a club!",
+            "Take a photography class!",
+            "Attend a workshop!",
+            "Go on an adventure!",
+            "Create a podcast!",
+            "Write a song!",
+            "Dance like nobody's watching!",
+            "Embrace the unknown!",
+            "Challenge yourself every day!",
+            "Make a difference in someone's life!",
+            "Live life to the fullest!",
+            "Find joy in the little things!",
+            "Laugh often and love deeply!",
+            "Cherish every moment!",
+            "Dream big and dare to fail!",
+            "Believe in yourself and your dreams!",
+            "Make today count!",
+            "Create your own path!",
+            "Inspire others with your actions!",
+            "Leave a legacy of kindness!",
+            "Be the change you wish to see in the world!",
+            "Follow your passion!",
+            "Never stop learning!",
+            "Stay curious and adventurous!",
+            "Embrace the journey!",
+            "Seek out new experiences!",
+            "Challenge your limits!",
+            "Find beauty in simplicity!",
+            "Create your own happiness!",
+            "Live with purpose!",
+            "Make every day an adventure!",
+            "Discover the magic in everyday life!"
+        ];
+        function displayRandomPhrase() {
+            const randomIndex = Math.floor(Math.random() * phrases.length);
+            document.getElementById("phrase").textContent = phrases[randomIndex];
+        }
+    </script>
+</body>
+
+</html>
