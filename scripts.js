@@ -62,36 +62,7 @@ const phrases = [
     "Make every day an adventure!",
     "Discover the magic in everyday life!"
 ];
-function displayRandomPhrase() {
+function displayRandomPhrase(...args) {
     const randomIndex = Math.floor(Math.random() * phrases.length);
     document.getElementById("phrase").textContent = phrases[randomIndex];
-}
-
-const ideas = [
-    "Paint something using only 3 colors.",
-    "Write a haiku about your breakfast.",
-    "Take a photo of something ordinary and make it look epic.",
-    "Write a 2-minute monologue for a fictional villain.",
-    "Draw your favorite animal from memory.",
-    "Invent a new holiday and describe how it's celebrated.",
-    "Create a comic strip with stick figures.",
-    "Write a letter to your future self.",
-    "Design a logo for a made-up company.",
-    "Describe a day in the life of a superhero's sidekick."
-];
-
-function displayRandomIdea() {
-    const randomIndex = Math.floor(Math.random() * ideas.length);
-    const phraseElem = document.getElementById("phrase");
-    if (phraseElem) {
-        phraseElem.textContent = ideas[randomIndex];
-    }
-}
-
-function generateRandomNumber() {
-    const random = Math.floor(Math.random() * 100) + 1;
-    const numberElem = document.getElementById("random-number");
-    if (numberElem) {
-        numberElem.textContent = random;
-    }
 }
