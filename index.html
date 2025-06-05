@@ -6,64 +6,65 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
     <title>Try Me</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='30' fill='%237b2031' stroke='white' stroke-width='4'/%3E%3Ctext x='32' y='42' font-size='32' text-anchor='middle' fill='white' font-family='Arial' font-weight='bold'%3E8%3C/text%3E%3C/svg%3E">
 </head>
 
 <body>
-    <header>
-        <h1>Welcome to Try Me!</h1>
-        <nav>
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#contact">Contact</a></li>
-                <li><a href="more-inspiration.html">More Inspiration</a></li>
-                <li><a href="quiz.html">Quiz</a></li>
-            </ul>
-        </nav>
+    <header class="main-header" style="font-size: 1.1rem; padding: 10px 0;">
+        <div class="header-content" style="max-width: 900px; margin: 0 auto;">
+            <div class="logo-title" style="font-size: 1.3rem;">
+                <span class="logo" style="font-size: 1.5rem;">🎲</span>
+                <h1 class="site-title" style="font-size: 1.5rem; margin: 0 0 0 0.5rem;">Try Me</h1>
+            </div>
+            <nav class="main-nav">
+                <ul style="font-size: 1rem; gap: 0.7rem;">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="more-inspiration.html">More Inspiration</a></li>
+                    <li><a href="quiz.html">Quiz</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
     <main>
         <section class="hero-section">
             <h1 class="hero-title">Unleash Your Curiosity</h1>
             <p class="hero-subtitle">Inspiration, fun, and creativity at your fingertips.</p>
         </section>
-        <div class="features-grid">
-
-            <section class="feature-card">
-                <h2>Creative Idea Generator</h2>
-                <button onclick="displayRandomIdea()">Get Creative Idea</button>
-                <p id="phrase" class="feature-output"></p>
-                <p class="feature-desc">Spark your creativity with a fun, unique challenge.</p>
-            </section>
-            <section class="feature-card">
-                <h2>Inspiring Random Answer</h2>
-                <button onclick="getRandomAnswer()">Get Inspired</button>
-                <p id="result" class="feature-output"></p>
-                <p class="feature-desc">Need a nudge? Get a quick, inspiring answer to any question.</p>
-            </section>
-        </div>
-        <section class="community-section">
-            <h2>Join Our Community</h2>
-            <p>Share your results, challenge your friends, and spread inspiration!<br>
-                <a href="#about">Learn more about us</a> | <a href="#contact">Get in touch</a>
-            </p>
-        </section>
-        <section id="about">
-            <h2>About</h2>
-            <p>
-                Try Me is a platform designed to spark creativity and inspire fun. Whether you're looking for a quick
-                creative challenge or a random answer to a question, we've got you covered!<br>
-                Our mission is to provide a space where curiosity thrives and creativity flourishes. We believe that
-                everyone has the potential to create something amazing, and we're here to help you discover that
-                potential.
-            </p>
-        </section>
-        <section id="contact">
-            <h2>Contact</h2>
-            <p>
-                Have questions, suggestions, or just want to say hi? We'd love to hear from you!<br>
-                You can reach us at <a href="mailto:info@tryme.com">info@tryme.com</a>
-            </p>
-        </section>
+        <section class="features-section">
+            <di class="features-grid">
+                <section class="feature-card">
+                    <h2>Creative Idea Generator</h2>
+                    <button onclick="displayRandomIdea()">Get Creative Idea</button>
+                    <p id="phrase" class="feature-output"></p>
+                    <p class="feature-desc">Spark your creativity with a fun, unique challenge.</p>
+                </section>
+                <section class="feature-card">
+                    <h2>Inspiring Random Answer</h2>
+                    <button onclick="getRandomAnswer()">Get Inspired</button>
+                    <p id="result" class="feature-output"></p>
+                    <p class="feature-desc">Need a nudge? Get a quick, inspiring answer to any question.</p>
+                </section>
+                <section class="info-community-grid">
+                    <div class="community-section">
+                        <h2>Join Our Community</h2>
+                        <p>Share your results, challenge your friends, and spread inspiration!<br>
+                            <a href="#about">Learn more about us</a> | <a href="#contact">Get in touch</a>
+                        </p>
+                    </div>
+                    <div class="about-section" id="about">
+                        <h2>About</h2>
+                        <p>
+                            Try Me is a platform designed to spark creativity and inspire fun. Whether you're looking
+                            for a quick
+                            creative challenge or a random answer to a question, we've got you covered!<br>
+                            Our mission is to provide a space where curiosity thrives and creativity flourishes. We
+                            believe that
+                            everyone has the potential to create something amazing, and we're here to help you discover
+                            that
+                            potential.
+                        </p>
+                    </div>
     </main>
     <footer>
         <p>&copy; 2025 Try Me. All rights reserved.</p>
@@ -72,6 +73,7 @@
         <p>Made with ❤️ by the Try Me Team</p>
     </footer>
     <script src="scripts.js"></script>
+    <!-- got some of the code from google -->
 </body>
 
 </html>
