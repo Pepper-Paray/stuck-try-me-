@@ -4,20 +4,36 @@ body {
     margin: 0;
     padding: 0;
     text-align: center;
-    background: linear-gradient(135deg, #e0e7ef, #bfc9d1, #e6e6e6);
-    color: #222;
+    background: linear-gradient(135deg, #3a0a1b 0%, #7b2031 50%, #1a1a1a 100%);
+    color: #eaeaea;
     height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
+    animation: bgMove 12s ease-in-out infinite alternate;
+    background-size: 200% 200%;
+}
+
+@keyframes bgMove {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
 }
 
 header {
-    background-color: #f5f7fa;
+    background-color: #2a0d18;
     padding: 20px;
     font-size: 24px;
     text-align: center;
-    color: #2d3a4a;
+    color: #f8eaea;
 }
 
 nav ul {
@@ -32,41 +48,76 @@ nav ul li {
 
 main {
     padding: 2rem;
-    background-color: #f8fafc;
+    background-color: #2d1a22;
     border-radius: 8px;
     box-shadow: 0 2px 8px rgba(44, 62, 80, 0.08);
+    color: #f8eaea;
 }
 
 /* Buttons */
 button {
-    background-color: #6c8ebf;
+    background-color: #7b2031;
     color: #fff;
     font-size: 18px;
     padding: 10px 20px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    transition: transform 0.2s, background-color 0.3s;
+    transition: transform 0.2s, background-color 0.3s, box-shadow 0.2s;
+    box-shadow: 0 2px 8px rgba(44, 62, 80, 0.12);
+    position: relative;
+    overflow: hidden;
 }
 
 button:hover {
-    background-color: #4a6a8a;
-    color: #e0e7ef;
-    transform: scale(1.05);
+    background-color: #a94442;
+    color: #fff;
+    transform: scale(1.07) translateY(-2px);
+    box-shadow: 0 6px 18px rgba(44, 62, 80, 0.18);
 }
 
 button:active {
-    animation: bounce 0.5s ease;
+    animation: buttonBounce 0.3s;
+}
+
+@keyframes buttonBounce {
+    0% {
+        transform: scale(1) translateY(0);
+    }
+
+    30% {
+        transform: scale(0.95) translateY(2px);
+    }
+
+    60% {
+        transform: scale(1.08) translateY(-4px);
+    }
+
+    100% {
+        transform: scale(1) translateY(0);
+    }
 }
 
 @keyframes bounce {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-10px); }
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
 }
 
 /* Content Sections */
 section {
     padding: 40px;
+}
+
+section, .feature-card, .community-section, .info-section {
+    border: 2px solid #a94442;
+    box-sizing: border-box;
 }
 
 #random-idea {
@@ -84,36 +135,207 @@ section {
     color: #2d3a4a;
 }
 
+/* Hero Section */
+.hero-section {
+    padding: 3rem 1rem 2rem 1rem;
+    background: linear-gradient(120deg, #bfc9d1 0%, #e0e7ef 100%);
+    border-radius: 16px;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 24px rgba(44, 62, 80, 0.10);
+}
+
+.hero-title {
+    font-size: 2.8rem;
+    color: #4a6a8a;
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.hero-subtitle {
+    font-size: 1.3rem;
+    color: #6c8ebf;
+    margin-bottom: 0;
+}
+
+/* Features Grid */
+.features-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+    margin-bottom: 2.5rem;
+}
+
+.feature-card {
+    background: #3a1d2d;
+    color: #f8eaea;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(44, 62, 80, 0.08);
+    padding: 2rem 1.5rem;
+    min-width: 260px;
+    max-width: 320px;
+    flex: 1 1 260px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.feature-card:hover {
+    transform: translateY(-8px) scale(1.03);
+    box-shadow: 0 8px 24px rgba(44, 62, 80, 0.14);
+}
+
+.feature-card form {
+    max-height: 60vh;
+    overflow-y: auto;
+    padding-right: 8px;
+    margin-bottom: 1rem;
+}
+
+.quiz-question {
+    margin-bottom: 1.2rem;
+    text-align: left;
+    background: #2d1a22;
+    border-radius: 8px;
+    padding: 0.7rem 1rem;
+    border: 1.5px solid #a94442;
+}
+
+.quiz-question p {
+    margin: 0 0 0.4rem 0;
+    font-weight: 600;
+    color: #ffb3c6;
+}
+
+.quiz-question label {
+    display: block;
+    margin-bottom: 0.2rem;
+    cursor: pointer;
+    color: #eaeaea;
+}
+
+@media (max-width: 700px) {
+    .feature-card form {
+        max-height: 50vh;
+    }
+}
+
+.feature-output {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin: 1rem 0 0.5rem 0;
+    color: #ffb3c6;
+    min-height: 2.2em;
+}
+
+.feature-desc {
+    font-size: 1rem;
+    color: #bfa6b8;
+    margin-top: 0.2rem;
+    margin-bottom: 0;
+}
+
+/* About List */
+.about-list {
+    max-width: 600px;
+    margin: 2rem auto;
+    text-align: left;
+    color: #eaeaea;
+    font-size: 1.1rem;
+}
+
+/* Community Section */
+.community-section {
+    background: #2d1a22;
+    border-radius: 12px;
+    margin: 2rem auto 2.5rem auto;
+    padding: 2rem 1rem;
+    max-width: 700px;
+    box-shadow: 0 2px 8px rgba(44, 62, 80, 0.07);
+    color: #f8eaea;
+    text-align: center;
+}
+
 /* Footer */
 footer {
-    background-color: #f5f7fa;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    background-color: #2a0d18;
     padding: 10px;
     font-size: 14px;
-    color: #2d3a4a;
+    color: #f8eaea;
+}
+
+/* Scroll Buttons */
+#scrollTopBtn,
+#scrollBottomBtn {
+    background: #3a0a1b;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 44px;
+    height: 44px;
+    font-size: 1.5rem;
+    margin: 0 8px;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(44, 62, 80, 0.18);
+    transition: background 0.2s, transform 0.2s;
+    position: relative;
+    bottom: 0;
+}
+
+#scrollTopBtn:hover,
+#scrollBottomBtn:hover {
+    background: #7b2031;
+    transform: scale(1.12);
 }
 
 /* Animation */
 @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(10px); }
-    to { opacity: 1; transform: translateY(0); }
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
-.ball, .eight-ball-section .ball {
-    width: 120px;
-    height: 120px;
-    background: #6c8ebf;
+.ball,
+.eight-ball-section .ball {
+    font-size: 2.5rem;
+    width: 90px;
+    height: 90px;
+    background: #7b2031;
     color: #fff;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 20px;
-    margin: 20px auto;
+    margin: 0 auto 1rem auto;
     cursor: pointer;
     box-shadow: 0 2px 8px rgba(44, 62, 80, 0.12);
-    transition: background 0.3s;
+    transition: background 0.3s, transform 0.2s;
 }
 
 .ball:hover {
-    background: #4a6a8a;
+    background: #3a0a1b;
+    transform: scale(1.08);
+}
+
+@media (max-width: 900px) {
+    .features-grid {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    .feature-card {
+        max-width: 100%;
+    }
 }

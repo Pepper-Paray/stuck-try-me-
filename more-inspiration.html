@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Try Me - More Inspiration</title>
+</head>
+
+<body>
+    <header>
+        <h1>More Inspiration</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#">More Inspiration</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="hero-section">
+            <h2 class="hero-title">Expand Your Horizons</h2>
+            <p class="hero-subtitle">Discover even more creative prompts and challenges!</p>
+        </section>
+        <section class="feature-card">
+            <h2>Bonus Creative Prompts</h2>
+            <ul class="about-list">
+                <li>List 10 things that make you smile.</li>
+                <li>Describe your dream adventure.</li>
+                <li>Make a collage from magazine clippings or digital images.</li>
+                <li>Write a letter to someone you admire.</li>
+                <li>Describe a new tradition you would like to start.</li>
+            </ul>
+        </section>
+        <br>
+        <section class="feature-card">
+            <h2>Random Inspiring Quote</h2>
+            <button onclick="displayRandomQuote()">Show Me Inspiration</button>
+            <p id="inspire-quote" class="feature-output"></p>
+            <p class="feature-desc">Get a fresh dose of motivation every time you visit.</p>
+        </section>
+        <section class="community-section">
+            <h2>Stay Inspired</h2>
+            <p>Join our community to share your creative results and inspire others!<br>
+                <a href="index.html#about">Learn more about us</a> | <a href="index.html#contact">Get in touch</a>  
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2025 Try Me. All rights reserved.</p>
+    </footer>
+    <script>
+        const inspiringQuotes = [
+            "The only way to do great work is to love what you do. – Steve Jobs",
+            "Believe you can and you're halfway there. – Theodore Roosevelt",
+            "You are never too old to set another goal or to dream a new dream. – C.S. Lewis",
+            "Success is not final, failure is not fatal: It is the courage to continue that counts. – Winston Churchill",
+            "Happiness is not something ready made. It comes from your own actions. – Dalai Lama",
+            "What you get by achieving your goals is not as important as what you become by achieving your goals. – Zig Ziglar",
+            "Dream big and dare to fail. – Norman Vaughan",
+            "Act as if what you do makes a difference. It does. – William James",
+            "Start where you are. Use what you have. Do what you can. – Arthur Ashe",
+            "The best way to predict the future is to create it. – Peter Drucker",
+            "You miss 100% of the shots you don't take. – Wayne Gretzky",
+            "It does not matter how slowly you go as long as you do not stop. – Confucius",
+            "Your time is limited, so don't waste it living someone else's life. – Steve Jobs",
+            "The future belongs to those who believe in the beauty of their dreams. – Eleanor Roosevelt",
+            "Success usually comes to those who are too busy to be looking for it. – Henry David Thoreau",
+            "Don't watch the clock; do what it does. Keep going. – Sam Levenson",
+        ];
+        function displayRandomQuote() {
+            const randomIndex = Math.floor(Math.random() * inspiringQuotes.length);
+            document.getElementById("inspire-quote").textContent = inspiringQuotes[randomIndex];
+        }
+    </script>
+</body>
+
+</html>
